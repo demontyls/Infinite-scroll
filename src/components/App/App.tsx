@@ -10,7 +10,7 @@ import './Style.scss';
 const App = () => {
   return (
     <>
-      <div className="main">
+      <div className="main new">
         <Routes>
           <Route path={'/'} element={ <Layout/> }>
             <Route index element={ <ScrollWrapper/> } />
