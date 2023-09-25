@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Infinite-scroll/static/css/main.b3a0dfae.css",
-    "main.js": "/Infinite-scroll/static/js/main.5be70808.js",
+    "main.js": "/Infinite-scroll/static/js/main.03547601.js",
     "index.html": "/Infinite-scroll/index.html",
     "main.b3a0dfae.css.map": "/Infinite-scroll/static/css/main.b3a0dfae.css.map",
-    "main.5be70808.js.map": "/Infinite-scroll/static/js/main.5be70808.js.map"
+    "main.03547601.js.map": "/Infinite-scroll/static/js/main.03547601.js.map"
   },
   "entrypoints": [
     "static/css/main.b3a0dfae.css",
-    "static/js/main.5be70808.js"
+    "static/js/main.03547601.js"
   ]
 }

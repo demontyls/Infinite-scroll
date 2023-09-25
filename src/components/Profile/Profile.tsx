@@ -23,7 +23,7 @@ const Profile:FC<IProfilePage> = () => {
     <>
         <div className="profile">
           <div className="profile__header">
-            <Link to="/" className="btn btn-primary btn-sm">
+            <Link to="/Infinite-scroll" className="btn btn-primary btn-sm">
               Назад
             </Link>
           </div>

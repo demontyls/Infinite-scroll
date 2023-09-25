@@ -8,7 +8,6 @@ const root = createRoot(element!);
 
 root.render(
   <BrowserRouter>
-    {/*<ScrollWrapper/>*/}
     <App/>
   </BrowserRouter>
 );
