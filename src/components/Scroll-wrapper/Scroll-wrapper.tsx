@@ -31,7 +31,7 @@ const ScrollWrapper:FC<IScrollWrapper> = () => {
 
   useEffect(()=> {
     document.addEventListener('scroll',scroll);
-    return function () {
+    return ()=> {
       document.removeEventListener('scroll', scroll)
     }
   }, []);
