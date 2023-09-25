@@ -5,5 +5,4 @@ export interface ICardField {
   body: string;
 }
 export interface IScrollWrapper {
-
 }

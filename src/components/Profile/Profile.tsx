@@ -1,22 +1,46 @@
-import React, {FC} from 'react';
-import {IProfile} from './Interface';
+import React, { FC, useEffect, useState } from 'react';
+import { IProfile, IProfilePage } from './Interface';
 
-import './Style.scss'
+import { Link, useParams } from 'react-router-dom';
 
-const Profile:FC<IProfile> = ({data, setProfile}) => {
-  const {title, body} = data;
+import './Style.scss';
+
+const Profile:FC<IProfilePage> = () => {
+  const [profile, setProfile] = useState<IProfile | null>(null);
+  const id = useParams().id;
+
+  useEffect(()=> {
+    if (id) {
+      fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        .then(response => response.json())
+        .then(( data:IProfile) => {
+          setProfile(data);
+        });
+    }
+  },[]);
+
   return (
-    <div className="profile">
-      <div className="profile__header">
-        <button className="btn btn-primary btn-sm" onClick={() => setProfile(null)}>
-          Назад
-        </button>
-      </div>
-      <div className="card p-2">
-        <h4>{ title }</h4>
-        <p>{ body }</p>
-      </div>
-    </div>
+    <>
+        <div className="profile">
+          <div className="profile__header">
+            <Link to="/" className="btn btn-primary btn-sm">
+              Назад
+            </Link>
+          </div>
+          <div className="card p-2">
+            { id ?
+              <div>
+                <h4>{ profile?.title }</h4>
+                <p>{ profile?.body }</p>
+              </div>
+              :
+              <div className="text-center p-3">
+                Пусто
+              </div>
+            }
+          </div>
+        </div>
+    </>
   );
 };
 

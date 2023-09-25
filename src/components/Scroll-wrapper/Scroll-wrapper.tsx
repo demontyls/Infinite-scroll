@@ -2,13 +2,11 @@ import React, { FC, useEffect, useState } from 'react';
 import { ICardField, IScrollWrapper } from './Interface';
 
 import Card from '../Card/Card';
-import Profile from '../Profile/Profile';
 
 import './Style.scss';
 
 const ScrollWrapper:FC<IScrollWrapper> = () => {
   const [entries, setEntries] = useState<ICardField[]>([]);
-  const [profile, setProfile] = useState<ICardField | null>(null);
   const [count, setCount] = useState(1);
   const [isGet, setIsGet] = useState(true);
   let x = 1;
@@ -53,17 +51,13 @@ const ScrollWrapper:FC<IScrollWrapper> = () => {
 
   return (
     <>
-      {profile ?
-        <Profile data={profile} setProfile={setProfile} />
-        :
         <div className="scroll-wrapper">
           {entries.map((card, i) => {
             return (
-              <Card key={i} data={card} setProfile={setProfile} />
+              <Card key={i} data={card} setCount={setCount} />
             )
           })}
         </div>
-      }
     </>
   );
 }

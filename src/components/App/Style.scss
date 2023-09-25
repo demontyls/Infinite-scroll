@@ -1,0 +1,11 @@
+$nav-height: 60px;
+.main {
+  margin-top: $nav-height;
+  padding: 24px;
+}
+
+.navbar {
+  height: $nav-height;
+  justify-content: flex-start;
+  gap: 32px;
+}
