@@ -54,7 +54,7 @@ const ScrollWrapper:FC<IScrollWrapper> = () => {
         <div className="scroll-wrapper">
           {entries.map((card, i) => {
             return (
-              <Card key={i} data={card} setCount={setCount} />
+              <Card key={i} data={card} from={'scroll-page'} setCount={setCount} />
             )
           })}
         </div>

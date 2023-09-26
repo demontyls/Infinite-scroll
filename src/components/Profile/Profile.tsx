@@ -8,6 +8,7 @@ import './Style.scss';
 const Profile:FC<IProfilePage> = () => {
   const [profile, setProfile] = useState<IProfile | null>(null);
   const id = useParams().id;
+  const parentPage = useParams().from;
 
   useEffect(()=> {
     if (id) {
@@ -23,7 +24,7 @@ const Profile:FC<IProfilePage> = () => {
     <>
         <div className="profile">
           <div className="profile__header">
-            <Link to="/Infinite-scroll" className="btn btn-primary btn-sm">
+            <Link to={`/${parentPage ?? 'Infinite-scroll'}`} className="btn btn-primary btn-sm">
               Назад
             </Link>
           </div>
